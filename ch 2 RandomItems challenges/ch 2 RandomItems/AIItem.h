@@ -12,18 +12,21 @@
 {
     NSString *_itemName;
     NSString *_serialNumber;
-    NSInteger _valInDollars;
+    NSUInteger _valInDollars;
     NSDate *_dateCreated;
 }
 
 +(instancetype)randomItem;
 
 // Designated initializer for AIItem
--(instancetype)initWithItemName:(NSString *)itemName
-                   serialNumber:(NSString *)serialNumber
-                   valInDollars:(NSInteger)valInDollars;
+-(instancetype)initWithName:(NSString *)name
+               serialNumber:(NSString *)serialNumber
+               valInDollars:(NSInteger)valInDollars;
 
--(instancetype)initWIthItemName:(NSString *)itemName;
+-(instancetype)initWithName:(NSString *)name
+               serialNumber:(NSString *)serialNumber;
+
+-(instancetype)initWithName:(NSString *)name;
 
 -(void)setItemName:(NSString *)itemName;
 -(NSString *)itemName;
@@ -31,8 +34,8 @@
 -(void)setSerialNumber:(NSString *)serialNumber;
 -(NSString *)serialNumber;
 
--(void)setValInDollars:(NSInteger)valInDollars;
--(NSInteger)valInDollars;
+-(void)setValInDollars:(NSUInteger)valInDollars;
+-(NSUInteger)valInDollars;
 
 -(NSDate *)dateCreated;
 

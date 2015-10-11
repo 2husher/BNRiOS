@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "AIItem.h"
+#import "AIContainer.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
 
-        NSMutableArray *items = [[NSMutableArray alloc] init];
+//        NSMutableArray *items = [[NSMutableArray alloc] init];
+        AIContainer *container = [[AIContainer alloc] init];
 
 //        [items addObject:@"One"];
 //        [items addObject:@"Two"];
@@ -46,18 +48,23 @@ int main(int argc, const char * argv[]) {
         for (int i = 0; i < 10; i++)
         {
             AIItem *item = [AIItem randomItem];
-            [items addObject:item];
+            [container addItem:item];
         }
 
-        id lastObj = [items lastObject];
-        [lastObj count];
 
-        for (AIItem *item in items)
-        {
-            NSLog(@"%@", item);
-        }
+        AIItem *newItem = [[AIItem alloc] initWithName:@"Carpet"
+                                          serialNumber:@"7G5F0"];
 
-        items = nil;
+        AIContainer *newContainer = [[AIContainer alloc]
+                                     initWithName:@"Box"
+                                     serialNumber:@"7F7F7"
+                                     valInDollars:555
+                                     subitems:[NSMutableArray arrayWithObject:newItem]];
+        [container addItem:newContainer];
+
+        NSLog(@"%@", container);
+
+        container = nil;
 
     }
     return 0;

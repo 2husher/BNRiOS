@@ -28,20 +28,20 @@
                                     'A' + arc4random() % 26,
                                     '0' + arc4random() % 10];
 
-    AIItem *newItem = [[self alloc] initWithItemName:randomItemName
-                                          serialNumber:randomSerialNumber
-                                          valInDollars:randomValue];
+    AIItem *newItem = [[self alloc] initWithName:randomItemName
+                                    serialNumber:randomSerialNumber
+                                    valInDollars:randomValue];
     return newItem;
 }
 
-- (instancetype)initWithItemName:(NSString *)itemName
-                    serialNumber:(NSString *)serialNumber
-                    valInDollars:(NSInteger)valInDollars
+- (instancetype)initWithName:(NSString *)name
+                serialNumber:(NSString *)serialNumber
+                valInDollars:(NSInteger)valInDollars
 {
     self = [super init];
     if (self)
     {
-        _itemName     = itemName;
+        _itemName     = name;
         _serialNumber = serialNumber;
         _valInDollars = valInDollars;
         _dateCreated  = [[NSDate alloc] init];
@@ -49,16 +49,23 @@
     return self;
 }
 
-- (instancetype)initWIthItemName:(NSString *)itemName
+- (instancetype)initWithName:(NSString *)name
+                serialNumber:(NSString *)serialNumber
 {
-    return [self initWithItemName:itemName
-                     serialNumber:@""
-                     valInDollars:0];
+    return [self initWithName:name
+                 serialNumber:serialNumber
+                 valInDollars:0];
+}
+
+- (instancetype)initWithName:(NSString *)name
+{
+    return [self initWithName:name
+                 serialNumber:@""];
 }
 
 - (instancetype)init
 {
-    return [self initWIthItemName:@"Item"];
+    return [self initWithName:@"Item"];
 }
 
 -(void)setItemName:(NSString *)itemName
@@ -81,12 +88,12 @@
     return _serialNumber;
 }
 
--(void)setValInDollars:(NSInteger)valInDollars
+-(void)setValInDollars:(NSUInteger)valInDollars
 {
     _valInDollars = valInDollars;
 }
 
--(NSInteger)valInDollars
+-(NSUInteger)valInDollars
 {
     return _valInDollars;
 }
