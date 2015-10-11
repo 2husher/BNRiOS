@@ -10,6 +10,30 @@
 
 @implementation AIItem
 
++ (instancetype)randomItem
+{
+    NSArray *randomAdjectiveList = @[@"Yellow", @"Green", @"Orange"];
+    NSArray *randomNounList      = @[@"Table", @"Spoon", @"Fork"];
+    NSUInteger adjectiveIndex    = arc4random() % [randomAdjectiveList count];
+    NSUInteger nounIndex         = arc4random() % [randomNounList count];
+
+    NSString *randomItemName = [NSString stringWithFormat:@"%@ %@",
+                                randomAdjectiveList[adjectiveIndex],
+                                randomNounList[nounIndex]];
+    NSInteger randomValue = arc4random() % 100;
+    NSString *randomSerialNumber = [NSString stringWithFormat:@"%c%c%c%c%c",
+                                    '0' + arc4random() % 10,
+                                    'A' + arc4random() % 26,
+                                    '0' + arc4random() % 10,
+                                    'A' + arc4random() % 26,
+                                    '0' + arc4random() % 10];
+
+    AIItem *newItem = [[self alloc] initWithItemName:randomItemName
+                                          serialNumber:randomSerialNumber
+                                          valInDollars:randomValue];
+    return newItem;
+}
+
 - (instancetype)initWithItemName:(NSString *)itemName
                     serialNumber:(NSString *)serialNumber
                     valInDollars:(NSInteger)valInDollars

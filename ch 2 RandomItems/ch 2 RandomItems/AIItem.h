@@ -16,6 +16,8 @@
     NSDate *_dateCreated;
 }
 
++(instancetype)randomItem;
+
 // Designated initializer for AIItem
 -(instancetype)initWithItemName:(NSString *)itemName
                    serialNumber:(NSString *)serialNumber
