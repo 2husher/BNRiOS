@@ -1,5 +1,5 @@
 //
-//  AIItem.h
+//  AIZItem.h
 //  ch 2 RandomItems
 //
 //  Created by X on 10/10/15.
@@ -8,22 +8,25 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AIItem : NSObject
+@interface AIZItem : NSObject
 {
     NSString *_itemName;
     NSString *_serialNumber;
     NSInteger _valInDollars;
     NSDate *_dateCreated;
+
+    AIZItem *_containedItem;
+    __weak AIZItem *_container;
 }
 
 +(instancetype)randomItem;
 
-// Designated initializer for AIItem
+// Designated initializer for AIZItem
 -(instancetype)initWithItemName:(NSString *)itemName
                    serialNumber:(NSString *)serialNumber
                    valInDollars:(NSInteger)valInDollars;
 
--(instancetype)initWIthItemName:(NSString *)itemName;
+-(instancetype)initWithItemName:(NSString *)itemName;
 
 -(void)setItemName:(NSString *)itemName;
 -(NSString *)itemName;
@@ -35,5 +38,11 @@
 -(NSInteger)valInDollars;
 
 -(NSDate *)dateCreated;
+
+-(void)setContainedItem:(AIZItem *)item;
+-(AIZItem *)containedItem;
+
+-(void)setContainer:(AIZItem *)item;
+-(AIZItem *)container;
 
 @end

@@ -1,14 +1,14 @@
 //
-//  AIItem.m
+//  AIZItem.m
 //  ch 2 RandomItems
 //
 //  Created by X on 10/10/15.
 //  Copyright (c) 2015 Alex Izotov. All rights reserved.
 //
 
-#import "AIItem.h"
+#import "AIZItem.h"
 
-@implementation AIItem
+@implementation AIZItem
 
 + (instancetype)randomItem
 {
@@ -28,7 +28,7 @@
                                     'A' + arc4random() % 26,
                                     '0' + arc4random() % 10];
 
-    AIItem *newItem = [[self alloc] initWithItemName:randomItemName
+    AIZItem *newItem = [[self alloc] initWithItemName:randomItemName
                                           serialNumber:randomSerialNumber
                                           valInDollars:randomValue];
     return newItem;
@@ -49,7 +49,7 @@
     return self;
 }
 
-- (instancetype)initWIthItemName:(NSString *)itemName
+- (instancetype)initWithItemName:(NSString *)itemName
 {
     return [self initWithItemName:itemName
                      serialNumber:@""
@@ -58,8 +58,10 @@
 
 - (instancetype)init
 {
-    return [self initWIthItemName:@"Item"];
+    return [self initWithItemName:@"Item"];
 }
+
+# pragma mark - Setters/Getters
 
 -(void)setItemName:(NSString *)itemName
 {
@@ -94,6 +96,35 @@
 -(NSDate *)dateCreated
 {
     return _dateCreated;
+}
+
+
+-(void)setContainedItem:(AIZItem *)item
+{
+    _containedItem = item;
+    item.container = self;
+}
+
+-(AIZItem *)containedItem
+{
+    return _containedItem;
+}
+
+-(void)setContainer:(AIZItem *)item
+{
+    _container = item;
+}
+
+-(AIZItem *)container
+{
+    return _container;
+}
+
+# pragma mark - Others Methods
+
+- (void)dealloc
+{
+    NSLog(@"Destroyed %@", self);
 }
 
 - (NSString *)description

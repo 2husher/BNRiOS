@@ -7,58 +7,32 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AIItem.h"
+#import "AIZItem.h"
 
-int main(int argc, const char * argv[]) {
-    @autoreleasepool {
-
+int main(int argc, const char * argv[])
+{
+    @autoreleasepool
+    {
         NSMutableArray *items = [[NSMutableArray alloc] init];
 
-//        [items addObject:@"One"];
-//        [items addObject:@"Two"];
-//        [items addObject:@"Three"];
-//        [items insertObject:@"Zero" atIndex:0];
-//
-//        for (NSString *item in items)
-//        {
-//            NSLog(@"%@", item);
-//        }
-       // AIItem *item = [[AIItem alloc] init];
-//        [item setItemName:@"Red Sofa"];
-       // item.itemName = @"Red Sofa";
-//        [item setSerialNumber:@"A1B2C"];
-       // item.serialNumber = @"A1B2C";
-//        [item setValInDollars:100];
-       // item.valInDollars = 100;
-//        NSLog(@"%@, %@, %ld, %@", [item itemName], [item serialNumber], [item valInDollars], [item dateCreated]);
-//        AIItem *item = [[AIItem alloc] initWithItemName:@"Red Sofa"
-//                                           serialNumber:@"A1B2C"
-//                                           valInDollars:100];
-//        NSLog(@"%@, %@, %ld, %@", item.itemName, item.serialNumber, item.valInDollars, item.dateCreated);
-//        NSLog(@"%@", item);
-//
-//        AIItem *itemWithName = [[AIItem alloc] initWIthItemName:@"Blue Sofa"];
-//        NSLog(@"%@", itemWithName);
-//
-//        AIItem *itemWithNoName = [[AIItem alloc] init];
-//        NSLog(@"%@", itemWithNoName);
+        AIZItem *backpack = [[AIZItem alloc] initWithItemName:@"Backpack"];
+        [items addObject:backpack];
 
-        for (int i = 0; i < 10; i++)
-        {
-            AIItem *item = [AIItem randomItem];
-            [items addObject:item];
-        }
+        AIZItem *calculator = [[AIZItem alloc] initWithItemName:@"Calculator"];
+        [items addObject:calculator];
 
-        id lastObj = [items lastObject];
-        [lastObj count];
+        backpack.containedItem = calculator;
 
-        for (AIItem *item in items)
+        backpack   = nil;
+        calculator = nil;
+
+        for (AIZItem *item in items)
         {
             NSLog(@"%@", item);
         }
 
+        NSLog(@"Setting items to nil...");
         items = nil;
-
     }
     return 0;
 }

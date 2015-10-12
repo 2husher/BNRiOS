@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		17EF0E961BC97E9900C4FA1B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EF0E951BC97E9900C4FA1B /* main.m */; };
-		17EF0E9E1BC989F000C4FA1B /* AIItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EF0E9D1BC989F000C4FA1B /* AIItem.m */; };
+		17EF0E9E1BC989F000C4FA1B /* AIZItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 17EF0E9D1BC989F000C4FA1B /* AIZItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,9 +25,9 @@
 
 /* Begin PBXFileReference section */
 		17EF0E921BC97E9900C4FA1B /* ch 2 RandomItems */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ch 2 RandomItems"; sourceTree = BUILT_PRODUCTS_DIR; };
-		17EF0E951BC97E9900C4FA1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		17EF0E9C1BC989F000C4FA1B /* AIItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIItem.h; sourceTree = "<group>"; };
-		17EF0E9D1BC989F000C4FA1B /* AIItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIItem.m; sourceTree = "<group>"; };
+		17EF0E951BC97E9900C4FA1B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		17EF0E9C1BC989F000C4FA1B /* AIZItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AIZItem.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		17EF0E9D1BC989F000C4FA1B /* AIZItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AIZItem.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				17EF0E951BC97E9900C4FA1B /* main.m */,
-				17EF0E9C1BC989F000C4FA1B /* AIItem.h */,
-				17EF0E9D1BC989F000C4FA1B /* AIItem.m */,
+				17EF0E9C1BC989F000C4FA1B /* AIZItem.h */,
+				17EF0E9D1BC989F000C4FA1B /* AIZItem.m */,
 			);
 			path = "ch 2 RandomItems";
 			sourceTree = "<group>";
@@ -123,7 +123,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17EF0E9E1BC989F000C4FA1B /* AIItem.m in Sources */,
+				17EF0E9E1BC989F000C4FA1B /* AIZItem.m in Sources */,
 				17EF0E961BC97E9900C4FA1B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,6 +241,7 @@
 				17EF0E9B1BC97E9900C4FA1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
