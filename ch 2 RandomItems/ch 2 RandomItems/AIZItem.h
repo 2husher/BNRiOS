@@ -9,15 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface AIZItem : NSObject
-{
-    NSString *_itemName;
-    NSString *_serialNumber;
-    NSInteger _valInDollars;
-    NSDate *_dateCreated;
-
-    AIZItem *_containedItem;
-    __weak AIZItem *_container;
-}
 
 +(instancetype)randomItem;
 
@@ -28,21 +19,12 @@
 
 -(instancetype)initWithItemName:(NSString *)itemName;
 
--(void)setItemName:(NSString *)itemName;
--(NSString *)itemName;
+@property (nonatomic, strong) AIZItem *container;
+@property (nonatomic, weak) AIZItem *containedItem;
 
--(void)setSerialNumber:(NSString *)serialNumber;
--(NSString *)serialNumber;
-
--(void)setValInDollars:(NSInteger)valInDollars;
--(NSInteger)valInDollars;
-
--(NSDate *)dateCreated;
-
--(void)setContainedItem:(AIZItem *)item;
--(AIZItem *)containedItem;
-
--(void)setContainer:(AIZItem *)item;
--(AIZItem *)container;
+@property (nonatomic, copy) NSString *itemName;
+@property (nonatomic, copy) NSString *serialNumber;
+@property (nonatomic) NSInteger valInDollars;
+@property (nonatomic, readonly, strong) NSDate *dateCreated;
 
 @end

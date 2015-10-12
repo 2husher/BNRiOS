@@ -61,63 +61,10 @@
     return [self initWithItemName:@"Item"];
 }
 
-# pragma mark - Setters/Getters
-
--(void)setItemName:(NSString *)itemName
+-(void)setContainedItem:(AIZItem *)containedItem
 {
-    _itemName = itemName;
-}
-
--(NSString *)itemName
-{
-    return _itemName;
-}
-
--(void)setSerialNumber:(NSString *)serialNumber
-{
-    _serialNumber = serialNumber;
-}
-
--(NSString *)serialNumber
-{
-    return _serialNumber;
-}
-
--(void)setValInDollars:(NSInteger)valInDollars
-{
-    _valInDollars = valInDollars;
-}
-
--(NSInteger)valInDollars
-{
-    return _valInDollars;
-}
-
--(NSDate *)dateCreated
-{
-    return _dateCreated;
-}
-
-
--(void)setContainedItem:(AIZItem *)item
-{
-    _containedItem = item;
-    item.container = self;
-}
-
--(AIZItem *)containedItem
-{
-    return _containedItem;
-}
-
--(void)setContainer:(AIZItem *)item
-{
-    _container = item;
-}
-
--(AIZItem *)container
-{
-    return _container;
+    _containedItem = containedItem;
+    containedItem.container = self;
 }
 
 # pragma mark - Others Methods
