@@ -12,7 +12,6 @@
 		170657E61BCC0F370071D6BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 170657E51BCC0F370071D6BD /* Images.xcassets */; };
 		170657F51BCC0F370071D6BD /* ch_4_HypnosisterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 170657F41BCC0F370071D6BD /* ch_4_HypnosisterTests.m */; };
 		170658001BCC20170071D6BD /* AIZHypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = 170657FF1BCC20170071D6BD /* AIZHypnosisView.m */; };
-		170658041BCC248E0071D6BD /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 170658031BCC248E0071D6BD /* Launch Screen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +36,6 @@
 		170657F41BCC0F370071D6BD /* ch_4_HypnosisterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ch_4_HypnosisterTests.m; sourceTree = "<group>"; };
 		170657FE1BCC20170071D6BD /* AIZHypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIZHypnosisView.h; sourceTree = "<group>"; };
 		170657FF1BCC20170071D6BD /* AIZHypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIZHypnosisView.m; sourceTree = "<group>"; };
-		170658031BCC248E0071D6BD /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +81,6 @@
 				170657DD1BCC0F370071D6BD /* AIZAppDelegate.m */,
 				170657FE1BCC20170071D6BD /* AIZHypnosisView.h */,
 				170657FF1BCC20170071D6BD /* AIZHypnosisView.m */,
-				170658031BCC248E0071D6BD /* Launch Screen.xib */,
 				170657E51BCC0F370071D6BD /* Images.xcassets */,
 				170657D81BCC0F370071D6BD /* Supporting Files */,
 			);
@@ -197,7 +194,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				170657E61BCC0F370071D6BD /* Images.xcassets in Resources */,
-				170658041BCC248E0071D6BD /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +389,7 @@
 				170657FA1BCC0F370071D6BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		170657FB1BCC0F370071D6BD /* Build configuration list for PBXNativeTarget "ch 4 HypnosisterTests" */ = {
 			isa = XCConfigurationList;
@@ -401,6 +398,7 @@
 				170657FD1BCC0F370071D6BD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

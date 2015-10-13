@@ -22,27 +22,19 @@
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    CGRect firstFrame          = CGRectMake(200, 100, 100, 150);
+    CGRect firstFrame          = self.window.bounds;
     AIZHypnosisView *firstView = [[AIZHypnosisView alloc]
                                   initWithFrame:firstFrame ];
-    firstView.backgroundColor  = [UIColor yellowColor];
 
-    CGRect secondFrame          = CGRectMake(20, 30, 100, 200);
-    AIZHypnosisView *secondView = [[AIZHypnosisView alloc]
-                                   initWithFrame:secondFrame ];
-    secondView.backgroundColor  = [UIColor greenColor];
+    NSLog(@"FirstView subviews: %@", firstView.subviews);
+    NSLog(@"Window subviews: %@", self.window.subviews);
 
     [self.window addSubview:firstView];
-    [firstView addSubview:secondView];
 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
 
-    NSLog(@"Window subviews:");
-    for (id view in self.window.subviews)
-    {
-        NSLog(@"View: %@", view);
-    }
+    NSLog(@"Window subviews: %@", self.window.subviews);
     return YES;
 }
 
