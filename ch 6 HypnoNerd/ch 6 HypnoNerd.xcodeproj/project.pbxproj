@@ -11,6 +11,8 @@
 		17BDD0AC1BCFB70B000F6A9B /* AIZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BDD0AB1BCFB70B000F6A9B /* AIZAppDelegate.m */; };
 		17BDD0B41BCFB70B000F6A9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17BDD0B31BCFB70B000F6A9B /* Images.xcassets */; };
 		17BDD0C31BCFB70B000F6A9B /* ch_6_HypnoNerdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BDD0C21BCFB70B000F6A9B /* ch_6_HypnoNerdTests.m */; };
+		17BDD0CE1BCFB946000F6A9B /* AIZHypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BDD0CD1BCFB946000F6A9B /* AIZHypnosisView.m */; };
+		17BDD0D11BCFB98D000F6A9B /* AIZHypnosisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BDD0D01BCFB98D000F6A9B /* AIZHypnosisViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +35,10 @@
 		17BDD0BC1BCFB70B000F6A9B /* ch 6 HypnoNerdTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ch 6 HypnoNerdTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17BDD0C11BCFB70B000F6A9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17BDD0C21BCFB70B000F6A9B /* ch_6_HypnoNerdTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ch_6_HypnoNerdTests.m; sourceTree = "<group>"; };
+		17BDD0CC1BCFB946000F6A9B /* AIZHypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIZHypnosisView.h; sourceTree = "<group>"; };
+		17BDD0CD1BCFB946000F6A9B /* AIZHypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIZHypnosisView.m; sourceTree = "<group>"; };
+		17BDD0CF1BCFB98D000F6A9B /* AIZHypnosisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIZHypnosisViewController.h; sourceTree = "<group>"; };
+		17BDD0D01BCFB98D000F6A9B /* AIZHypnosisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIZHypnosisViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,10 @@
 			children = (
 				17BDD0AA1BCFB70B000F6A9B /* AIZAppDelegate.h */,
 				17BDD0AB1BCFB70B000F6A9B /* AIZAppDelegate.m */,
+				17BDD0CC1BCFB946000F6A9B /* AIZHypnosisView.h */,
+				17BDD0CD1BCFB946000F6A9B /* AIZHypnosisView.m */,
+				17BDD0CF1BCFB98D000F6A9B /* AIZHypnosisViewController.h */,
+				17BDD0D01BCFB98D000F6A9B /* AIZHypnosisViewController.m */,
 				17BDD0B31BCFB70B000F6A9B /* Images.xcassets */,
 				17BDD0A61BCFB70B000F6A9B /* Supporting Files */,
 			);
@@ -206,7 +216,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17BDD0CE1BCFB946000F6A9B /* AIZHypnosisView.m in Sources */,
 				17BDD0AC1BCFB70B000F6A9B /* AIZAppDelegate.m in Sources */,
+				17BDD0D11BCFB98D000F6A9B /* AIZHypnosisViewController.m in Sources */,
 				17BDD0A91BCFB70B000F6A9B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,7 @@
 //
 
 #import "AIZAppDelegate.h"
+#import "AIZHypnosisViewController.h"
 
 @interface AIZAppDelegate ()
 
@@ -19,6 +20,9 @@
 {
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
+
+    AIZHypnosisViewController *hvc = [[AIZHypnosisViewController alloc] init];
+    self.window.rootViewController = hvc;   
 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
