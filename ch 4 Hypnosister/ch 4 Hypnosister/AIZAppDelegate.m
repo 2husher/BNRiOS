@@ -22,14 +22,29 @@
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
 
-    CGRect firstFrame          = self.window.bounds;
-    AIZHypnosisView *firstView = [[AIZHypnosisView alloc]
-                                  initWithFrame:firstFrame ];
+//    CGRect firstFrame          = self.window.bounds;
+//    AIZHypnosisView *firstView = [[AIZHypnosisView alloc]
+//                                  initWithFrame:firstFrame ];
+//
+//    NSLog(@"FirstView subviews: %@", firstView.subviews);
+//    NSLog(@"Window subviews: %@", self.window.subviews);
+//
+//    [self.window addSubview:firstView];
 
-    NSLog(@"FirstView subviews: %@", firstView.subviews);
-    NSLog(@"Window subviews: %@", self.window.subviews);
+    CGRect screenRect = self.window.bounds;
+    CGRect bigRect    = screenRect;
+    bigRect.size.height *= 2;
+    bigRect.size.width  *= 2;
 
-    [self.window addSubview:firstView];
+    UIScrollView *scrollView = [[UIScrollView alloc]
+                                initWithFrame:screenRect];
+    [self.window addSubview:scrollView];
+
+    AIZHypnosisView *hypnosisView = [[AIZHypnosisView alloc]
+                                     initWithFrame:bigRect];
+    [scrollView addSubview:hypnosisView];
+
+    scrollView.contentSize = bigRect.size;
 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
@@ -39,3 +54,21 @@
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
