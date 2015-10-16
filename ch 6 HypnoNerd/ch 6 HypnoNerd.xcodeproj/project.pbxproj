@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		179E5C7C1BD15B0900052050 /* AIZReminderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179E5C7B1BD15B0900052050 /* AIZReminderViewController.xib */; };
 		17BDD0A91BCFB70B000F6A9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BDD0A81BCFB70B000F6A9B /* main.m */; };
 		17BDD0AC1BCFB70B000F6A9B /* AIZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BDD0AB1BCFB70B000F6A9B /* AIZAppDelegate.m */; };
 		17BDD0B41BCFB70B000F6A9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17BDD0B31BCFB70B000F6A9B /* Images.xcassets */; };
 		17BDD0C31BCFB70B000F6A9B /* ch_6_HypnoNerdTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BDD0C21BCFB70B000F6A9B /* ch_6_HypnoNerdTests.m */; };
 		17BDD0CE1BCFB946000F6A9B /* AIZHypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BDD0CD1BCFB946000F6A9B /* AIZHypnosisView.m */; };
 		17BDD0D11BCFB98D000F6A9B /* AIZHypnosisViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BDD0D01BCFB98D000F6A9B /* AIZHypnosisViewController.m */; };
+		17BDD0D41BCFBFAA000F6A9B /* AIZReminderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BDD0D31BCFBFAA000F6A9B /* AIZReminderViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		179E5C7B1BD15B0900052050 /* AIZReminderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AIZReminderViewController.xib; sourceTree = "<group>"; };
 		17BDD0A31BCFB70B000F6A9B /* ch 6 HypnoNerd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ch 6 HypnoNerd.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17BDD0A71BCFB70B000F6A9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17BDD0A81BCFB70B000F6A9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -39,6 +42,8 @@
 		17BDD0CD1BCFB946000F6A9B /* AIZHypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIZHypnosisView.m; sourceTree = "<group>"; };
 		17BDD0CF1BCFB98D000F6A9B /* AIZHypnosisViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIZHypnosisViewController.h; sourceTree = "<group>"; };
 		17BDD0D01BCFB98D000F6A9B /* AIZHypnosisViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIZHypnosisViewController.m; sourceTree = "<group>"; };
+		17BDD0D21BCFBFAA000F6A9B /* AIZReminderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIZReminderViewController.h; sourceTree = "<group>"; };
+		17BDD0D31BCFBFAA000F6A9B /* AIZReminderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIZReminderViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +91,9 @@
 				17BDD0CD1BCFB946000F6A9B /* AIZHypnosisView.m */,
 				17BDD0CF1BCFB98D000F6A9B /* AIZHypnosisViewController.h */,
 				17BDD0D01BCFB98D000F6A9B /* AIZHypnosisViewController.m */,
+				17BDD0D21BCFBFAA000F6A9B /* AIZReminderViewController.h */,
+				17BDD0D31BCFBFAA000F6A9B /* AIZReminderViewController.m */,
+				179E5C7B1BD15B0900052050 /* AIZReminderViewController.xib */,
 				17BDD0B31BCFB70B000F6A9B /* Images.xcassets */,
 				17BDD0A61BCFB70B000F6A9B /* Supporting Files */,
 			);
@@ -199,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17BDD0B41BCFB70B000F6A9B /* Images.xcassets in Resources */,
+				179E5C7C1BD15B0900052050 /* AIZReminderViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,6 +228,7 @@
 				17BDD0CE1BCFB946000F6A9B /* AIZHypnosisView.m in Sources */,
 				17BDD0AC1BCFB70B000F6A9B /* AIZAppDelegate.m in Sources */,
 				17BDD0D11BCFB98D000F6A9B /* AIZHypnosisViewController.m in Sources */,
+				17BDD0D41BCFBFAA000F6A9B /* AIZReminderViewController.m in Sources */,
 				17BDD0A91BCFB70B000F6A9B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,6 +405,7 @@
 				17BDD0C81BCFB70B000F6A9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		17BDD0C91BCFB70B000F6A9B /* Build configuration list for PBXNativeTarget "ch 6 HypnoNerdTests" */ = {
 			isa = XCConfigurationList;
@@ -403,6 +414,7 @@
 				17BDD0CB1BCFB70B000F6A9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,6 +8,7 @@
 
 #import "AIZAppDelegate.h"
 #import "AIZHypnosisViewController.h"
+#import "AIZReminderViewController.h"
 
 @interface AIZAppDelegate ()
 
@@ -22,7 +23,13 @@
                    initWithFrame:[[UIScreen mainScreen] bounds]];
 
     AIZHypnosisViewController *hvc = [[AIZHypnosisViewController alloc] init];
-    self.window.rootViewController = hvc;   
+
+    NSBundle *appBundle = [NSBundle mainBundle];
+    AIZReminderViewController *rvc = [[AIZReminderViewController alloc]
+                                      initWithNibName:@"AIZReminderViewController"
+                                      bundle:appBundle];
+
+    self.window.rootViewController = rvc;
 
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
