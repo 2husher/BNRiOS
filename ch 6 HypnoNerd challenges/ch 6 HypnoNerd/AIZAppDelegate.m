@@ -9,6 +9,7 @@
 #import "AIZAppDelegate.h"
 #import "AIZHypnosisViewController.h"
 #import "AIZReminderViewController.h"
+#import "AIZQuizViewController.h"
 
 @interface AIZAppDelegate ()
 
@@ -32,9 +33,10 @@
 
     AIZHypnosisViewController *hvc = [[AIZHypnosisViewController alloc] init];
     AIZReminderViewController *rvc = [[AIZReminderViewController alloc] init];
+    AIZQuizViewController     *qvc = [[AIZQuizViewController alloc] init];
 
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
-    tabBarController.viewControllers = @[hvc, rvc];
+    tabBarController.viewControllers = @[hvc, rvc, qvc];
 
     self.window.rootViewController = tabBarController;
 

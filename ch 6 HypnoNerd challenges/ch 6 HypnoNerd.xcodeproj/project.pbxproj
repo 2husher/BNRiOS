@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		179E5C7C1BD15B0900052050 /* AIZReminderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 179E5C7B1BD15B0900052050 /* AIZReminderViewController.xib */; };
+		17BA71FD1BD27E0C003ACFF8 /* AIZQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BA71FB1BD27E0C003ACFF8 /* AIZQuizViewController.m */; };
+		17BA71FE1BD27E0C003ACFF8 /* AIZQuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17BA71FC1BD27E0C003ACFF8 /* AIZQuizViewController.xib */; };
 		17BDD0A91BCFB70B000F6A9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BDD0A81BCFB70B000F6A9B /* main.m */; };
 		17BDD0AC1BCFB70B000F6A9B /* AIZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17BDD0AB1BCFB70B000F6A9B /* AIZAppDelegate.m */; };
 		17BDD0B41BCFB70B000F6A9B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17BDD0B31BCFB70B000F6A9B /* Images.xcassets */; };
@@ -29,6 +31,9 @@
 
 /* Begin PBXFileReference section */
 		179E5C7B1BD15B0900052050 /* AIZReminderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AIZReminderViewController.xib; sourceTree = "<group>"; };
+		17BA71FA1BD27E0C003ACFF8 /* AIZQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIZQuizViewController.h; sourceTree = "<group>"; };
+		17BA71FB1BD27E0C003ACFF8 /* AIZQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIZQuizViewController.m; sourceTree = "<group>"; };
+		17BA71FC1BD27E0C003ACFF8 /* AIZQuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AIZQuizViewController.xib; sourceTree = "<group>"; };
 		17BDD0A31BCFB70B000F6A9B /* ch 6 HypnoNerd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ch 6 HypnoNerd.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17BDD0A71BCFB70B000F6A9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17BDD0A81BCFB70B000F6A9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -71,6 +76,8 @@
 				17BDD0D01BCFB98D000F6A9B /* AIZHypnosisViewController.m */,
 				17BDD0D21BCFBFAA000F6A9B /* AIZReminderViewController.h */,
 				17BDD0D31BCFBFAA000F6A9B /* AIZReminderViewController.m */,
+				17BA71FA1BD27E0C003ACFF8 /* AIZQuizViewController.h */,
+				17BA71FB1BD27E0C003ACFF8 /* AIZQuizViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -81,6 +88,7 @@
 				17BDD0CC1BCFB946000F6A9B /* AIZHypnosisView.h */,
 				17BDD0CD1BCFB946000F6A9B /* AIZHypnosisView.m */,
 				179E5C7B1BD15B0900052050 /* AIZReminderViewController.xib */,
+				17BA71FC1BD27E0C003ACFF8 /* AIZQuizViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -224,6 +232,7 @@
 			files = (
 				17BDD0B41BCFB70B000F6A9B /* Images.xcassets in Resources */,
 				179E5C7C1BD15B0900052050 /* AIZReminderViewController.xib in Resources */,
+				17BA71FE1BD27E0C003ACFF8 /* AIZQuizViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17BDD0CE1BCFB946000F6A9B /* AIZHypnosisView.m in Sources */,
+				17BA71FD1BD27E0C003ACFF8 /* AIZQuizViewController.m in Sources */,
 				17BDD0AC1BCFB70B000F6A9B /* AIZAppDelegate.m in Sources */,
 				17BDD0D11BCFB98D000F6A9B /* AIZHypnosisViewController.m in Sources */,
 				17BDD0D41BCFBFAA000F6A9B /* AIZReminderViewController.m in Sources */,
