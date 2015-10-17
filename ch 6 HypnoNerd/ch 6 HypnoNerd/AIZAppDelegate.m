@@ -19,15 +19,19 @@
 - (BOOL)            application:(UIApplication *)application
   didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)])
+    {
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:
+                                                       UIUserNotificationTypeAlert|
+                                                       UIUserNotificationTypeBadge|
+                                                       UIUserNotificationTypeSound categories:nil]];
+    }
+
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
 
     AIZHypnosisViewController *hvc = [[AIZHypnosisViewController alloc] init];
-
-    NSBundle *appBundle = [NSBundle mainBundle];
-    AIZReminderViewController *rvc = [[AIZReminderViewController alloc]
-                                      initWithNibName:@"AIZReminderViewController"
-                                      bundle:appBundle];
+    AIZReminderViewController *rvc = [[AIZReminderViewController alloc] init];
 
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.viewControllers = @[hvc, rvc];

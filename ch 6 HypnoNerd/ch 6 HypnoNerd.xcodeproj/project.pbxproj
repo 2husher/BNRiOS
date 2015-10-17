@@ -64,6 +64,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17BA71F81BD254AE003ACFF8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				17BDD0CF1BCFB98D000F6A9B /* AIZHypnosisViewController.h */,
+				17BDD0D01BCFB98D000F6A9B /* AIZHypnosisViewController.m */,
+				17BDD0D21BCFBFAA000F6A9B /* AIZReminderViewController.h */,
+				17BDD0D31BCFBFAA000F6A9B /* AIZReminderViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		17BA71F91BD254BD003ACFF8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				17BDD0CC1BCFB946000F6A9B /* AIZHypnosisView.h */,
+				17BDD0CD1BCFB946000F6A9B /* AIZHypnosisView.m */,
+				179E5C7B1BD15B0900052050 /* AIZReminderViewController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		17BDD09A1BCFB70B000F6A9B = {
 			isa = PBXGroup;
 			children = (
@@ -87,13 +108,8 @@
 			children = (
 				17BDD0AA1BCFB70B000F6A9B /* AIZAppDelegate.h */,
 				17BDD0AB1BCFB70B000F6A9B /* AIZAppDelegate.m */,
-				17BDD0CC1BCFB946000F6A9B /* AIZHypnosisView.h */,
-				17BDD0CD1BCFB946000F6A9B /* AIZHypnosisView.m */,
-				17BDD0CF1BCFB98D000F6A9B /* AIZHypnosisViewController.h */,
-				17BDD0D01BCFB98D000F6A9B /* AIZHypnosisViewController.m */,
-				17BDD0D21BCFBFAA000F6A9B /* AIZReminderViewController.h */,
-				17BDD0D31BCFBFAA000F6A9B /* AIZReminderViewController.m */,
-				179E5C7B1BD15B0900052050 /* AIZReminderViewController.xib */,
+				17BA71F81BD254AE003ACFF8 /* Controllers */,
+				17BA71F91BD254BD003ACFF8 /* Views */,
 				17BDD0B31BCFB70B000F6A9B /* Images.xcassets */,
 				17BDD0A61BCFB70B000F6A9B /* Supporting Files */,
 			);

@@ -30,4 +30,10 @@
     return self;
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    NSLog(@"AIZHypnosisViewController loaded its view");
+}
+
 @end
