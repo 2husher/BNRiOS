@@ -30,6 +30,7 @@
 
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
+    [self.window makeKeyAndVisible];
 
     AIZHypnosisViewController *hvc = [[AIZHypnosisViewController alloc] init];
     AIZReminderViewController *rvc = [[AIZReminderViewController alloc] init];
@@ -41,7 +42,7 @@
     self.window.rootViewController = tabBarController;
 
     self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+
     return YES;
 }
 

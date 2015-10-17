@@ -10,4 +10,6 @@
 
 @interface AIZHypnosisView : UIView
 
+@property (strong, nonatomic) UIColor *circleColor;
+
 @end

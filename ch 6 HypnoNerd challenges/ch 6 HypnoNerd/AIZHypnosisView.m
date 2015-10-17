@@ -8,12 +8,6 @@
 
 #import "AIZHypnosisView.h"
 
-@interface AIZHypnosisView ()
-
-@property (strong, nonatomic) UIColor *circleColor;
-
-@end
-
 @implementation AIZHypnosisView
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -59,21 +53,6 @@
     [self.circleColor setStroke];
 
     [path stroke];
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    NSLog(@"%@ was touched", self);
-
-    float red   = (arc4random() % 100) / 100.0;
-    float green = (arc4random() % 100) / 100.0;
-    float blue  = (arc4random() % 100) / 100.0;
-
-    UIColor *randomColor = [UIColor colorWithRed:red
-                                          green:green
-                                           blue:blue
-                                          alpha:1.0];
-    self.circleColor = randomColor;
 }
 
 @end
