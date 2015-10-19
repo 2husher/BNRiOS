@@ -9,7 +9,9 @@
 #import "AIZAppDelegate.h"
 #import "AIZHypnosisView.h"
 
-@interface AIZAppDelegate ()
+@interface AIZAppDelegate () <UIScrollViewDelegate>
+
+@property (strong, nonatomic) AIZHypnosisView *hypnosisView;
 
 @end
 
@@ -33,22 +35,27 @@
 
     CGRect screenRect = self.window.bounds;
     CGRect bigRect    = screenRect;
-    bigRect.size.width  *= 2;
+//    bigRect.size.width  *= 2;
 
     UIScrollView *scrollView = [[UIScrollView alloc]
                                 initWithFrame:screenRect];
-    scrollView.pagingEnabled = YES;
+//    scrollView.pagingEnabled = YES;
+    scrollView.maximumZoomScale = 3.0;
+    scrollView.minimumZoomScale = 0.5;
+    
+    scrollView.delegate = self;
+
     [self.window addSubview:scrollView];
 
-    AIZHypnosisView *hypnosisView = [[AIZHypnosisView alloc]
+    self.hypnosisView = [[AIZHypnosisView alloc]
                                      initWithFrame:screenRect];
-    [scrollView addSubview:hypnosisView];
+    [scrollView addSubview:self.hypnosisView];
 
-    screenRect.origin.x += screenRect.size.width;
-    AIZHypnosisView *anotherView = [[AIZHypnosisView alloc]
-                                    initWithFrame:screenRect];
-    [scrollView addSubview:anotherView];
-
+//    screenRect.origin.x += screenRect.size.width;
+//    AIZHypnosisView *anotherView = [[AIZHypnosisView alloc]
+//                                    initWithFrame:screenRect];
+//    [scrollView addSubview:anotherView];
+//
     scrollView.contentSize = bigRect.size;
 
     self.window.backgroundColor = [UIColor whiteColor];
@@ -56,6 +63,11 @@
 
     NSLog(@"Window subviews: %@", self.window.subviews);
     return YES;
+}
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.hypnosisView;
 }
 
 @end
