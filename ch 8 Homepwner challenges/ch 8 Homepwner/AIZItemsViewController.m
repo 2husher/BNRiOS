@@ -78,6 +78,9 @@
 
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"UITableViewCell"];
+
+    self.tableView.backgroundView =
+        [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"temple"]];
 }
 
 # pragma mark - UITableViewDataSource Methods
@@ -108,7 +111,6 @@
                                         forIndexPath:indexPath];
 
     AIZItem *item = nil;
-
     switch (indexPath.section)
     {
         case 0:
@@ -120,9 +122,50 @@
         default:
             break;
     }
-    cell.textLabel.text = [item description];
+    item = [self itemForIndexPath:indexPath];
 
+    cell.textLabel.text = [item description];
+    if ([[item description] isEqualToString:@"No more items!"] == NO)
+    {
+        cell.textLabel.font = [UIFont systemFontOfSize:20.0];
+    }
     return cell;
+}
+
+-(AIZItem *)itemForIndexPath:(NSIndexPath *)indexPath
+{
+    AIZItem *item = nil;
+    switch (indexPath.section)
+    {
+        case 0:
+            item = self.itemsExpens50[indexPath.row];
+            break;
+        case 1:
+            item = self.itemsCheaper50[indexPath.row];
+            break;
+        default:
+            break;
+    }
+    return item;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView
+heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat rowHeight = 0;
+
+    AIZItem *item = nil;
+    item = [self itemForIndexPath:indexPath];
+
+    if ([[item description] isEqualToString:@"No more items!"] == NO)
+    {
+        rowHeight = 60;
+    }
+    else
+    {
+        rowHeight = 44;
+    }
+    return rowHeight;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
