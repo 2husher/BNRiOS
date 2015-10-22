@@ -10,6 +10,13 @@
 #import "AIZItemStore.h"
 #import "AIZItem.h"
 
+@interface AIZItemsViewController ()
+
+@property (nonatomic) NSMutableArray *itemsCheaper50;
+@property (nonatomic) NSMutableArray *itemsExpens50;
+
+@end
+
 @implementation AIZItemsViewController
 
 - (instancetype)init
@@ -21,6 +28,22 @@
         {
             [[AIZItemStore sharedStore] createItem];
         }
+        self.itemsCheaper50 = [[NSMutableArray alloc] init];
+        self.itemsExpens50  = [[NSMutableArray alloc] init];
+
+        NSArray *items = [[AIZItemStore sharedStore] allItems];
+        for (AIZItem *item in items)
+        {
+            if (item.valInDollars >= 50)
+            {
+                [self.itemsExpens50 addObject:item];
+            }
+            else
+            {
+                [self.itemsCheaper50 addObject:item];
+            }
+        }
+
     }
     return self;
 }
@@ -30,38 +53,79 @@
     return [self init];
 }
 
-# pragma mark - UITableViewDataSource Methods
-
-- (NSInteger)tableView:(UITableView *)tableView
- numberOfRowsInSection:(NSInteger)section
-{
-    return [[[AIZItemStore sharedStore] allItems] count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView
-         cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-//    UITableViewCell *cell = [[UITableViewCell alloc]
-//                             initWithStyle:UITableViewCellStyleDefault
-//                             reuseIdentifier:@"UITableViewCell"];
-
-    UITableViewCell *cell =
-        [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
-                                        forIndexPath:indexPath];
-
-    NSArray *items = [[AIZItemStore sharedStore] allItems];
-    AIZItem *item  = items[indexPath.row];
-
-    cell.textLabel.text = [item description];
-    return cell;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
     [self.tableView registerClass:[UITableViewCell class]
            forCellReuseIdentifier:@"UITableViewCell"];
+}
+
+# pragma mark - UITableViewDataSource Methods
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
+{
+    NSInteger count = 0;
+    switch (section)
+    {
+        case 0:
+            count = [self.itemsExpens50 count];
+            break;
+        case 1:
+            count = [self.itemsCheaper50 count];
+            break;
+        default:
+            break;
+    }
+    return count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell =
+        [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
+                                        forIndexPath:indexPath];
+
+    AIZItem *item = nil;
+
+    switch (indexPath.section)
+    {
+        case 0:
+            item = self.itemsExpens50[indexPath.row];
+            break;
+        case 1:
+            item = self.itemsCheaper50[indexPath.row];
+            break;
+        default:
+            break;
+    }
+    cell.textLabel.text = [item description];
+
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
+}
+
+- (NSString *)tableView:(UITableView *)tableView
+titleForHeaderInSection:(NSInteger)section
+{
+    NSString *title = nil;
+    switch (section)
+    {
+        case 0:
+            title = @"Worth >= 50$";
+            break;
+        case 1:
+            title = @"Worth < 50$";
+        default:
+            break;
+    }
+    return title;
 }
 
 @end
