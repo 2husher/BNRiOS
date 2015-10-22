@@ -28,24 +28,43 @@
         {
             [[AIZItemStore sharedStore] createItem];
         }
+
         self.itemsCheaper50 = [[NSMutableArray alloc] init];
         self.itemsExpens50  = [[NSMutableArray alloc] init];
 
-        NSArray *items = [[AIZItemStore sharedStore] allItems];
-        for (AIZItem *item in items)
-        {
-            if (item.valInDollars >= 50)
-            {
-                [self.itemsExpens50 addObject:item];
-            }
-            else
-            {
-                [self.itemsCheaper50 addObject:item];
-            }
-        }
+        [self setItemsCheaperAndExpens50];
 
+        [self setLastRow];
     }
     return self;
+}
+
+- (void) setItemsCheaperAndExpens50
+{
+    NSArray *items = [[AIZItemStore sharedStore] allItems];
+    for (AIZItem *item in items)
+    {
+        if (item.valInDollars >= 50)
+        {
+            [self.itemsExpens50 addObject:item];
+        }
+        else
+        {
+            [self.itemsCheaper50 addObject:item];
+        }
+    }
+}
+
+- (void) setLastRow
+{
+    if ([self.itemsCheaper50 lastObject] == nil)
+    {
+        [self.itemsExpens50 addObject:@"No more items!"];
+    }
+    else
+    {
+        [self.itemsCheaper50 addObject:@"No more items!"];
+    }
 }
 
 - (instancetype)initWithStyle:(UITableViewStyle)style
