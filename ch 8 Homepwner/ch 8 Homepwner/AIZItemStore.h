@@ -15,6 +15,10 @@
 @property (nonatomic, readonly) NSArray *allItems;
 
 + (instancetype)sharedStore;
+
 - (AIZItem *)createItem;
+- (void)removeItem:(AIZItem *)item;
+- (void)moveItemAtIndex:(NSUInteger)fromIndex
+                toIndex:(NSUInteger)toIndex;
 
 @end
