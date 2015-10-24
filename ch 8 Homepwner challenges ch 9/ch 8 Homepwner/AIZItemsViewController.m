@@ -158,6 +158,21 @@ canEditRowAtIndexPath:(NSIndexPath *)indexPath
     }
 }
 
+- (NSIndexPath *)              tableView:(UITableView *)tableView
+targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath
+                     toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath
+{
+    NSInteger lastRowIndex = [[[AIZItemStore sharedStore] allItems] count];
+    if (proposedDestinationIndexPath.row == lastRowIndex)
+    {
+        return sourceIndexPath;
+    }
+    else
+    {
+        return proposedDestinationIndexPath;
+    }
+}
+
 @end
 
 
