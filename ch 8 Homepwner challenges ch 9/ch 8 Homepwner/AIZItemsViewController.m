@@ -35,7 +35,7 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    return [[[AIZItemStore sharedStore] allItems] count];
+    return [[[AIZItemStore sharedStore] allItems] count] + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView
@@ -45,8 +45,11 @@
         [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
                                         forIndexPath:indexPath];
 
-    NSArray *items = [[AIZItemStore sharedStore] allItems];
-    AIZItem *item  = items[indexPath.row];
+    NSMutableArray *items = [[NSMutableArray alloc]
+                             initWithArray:[[AIZItemStore sharedStore] allItems]];
+    [items addObject:@"No more items!"];
+    NSArray *itemsWithLastRow = [[NSArray alloc] initWithArray:items];
+    AIZItem *item  = itemsWithLastRow[indexPath.row];
 
     cell.textLabel.text = [item description];
     return cell;
@@ -125,6 +128,34 @@ moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath
 titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return @"Remove";
+}
+
+- (BOOL)    tableView:(UITableView *)tableView
+canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger lastRowIndex = [[[AIZItemStore sharedStore] allItems] count];
+    if (lastRowIndex == indexPath.row)
+    {
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
+}
+
+- (BOOL)tableView:(UITableView *)tableView
+canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger lastRowIndex = [[[AIZItemStore sharedStore] allItems] count];
+    if (lastRowIndex == indexPath.row)
+    {
+        return NO;
+    }
+    else
+    {
+        return YES;
+    }
 }
 
 @end
