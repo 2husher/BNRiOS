@@ -9,6 +9,7 @@
 #import "AIZItemsViewController.h"
 #import "AIZItemStore.h"
 #import "AIZItem.h"
+#import "AIZDetailViewController.h"
 
 @interface AIZItemsViewController ()
 
@@ -30,6 +31,20 @@
 - (instancetype)initWithStyle:(UITableViewStyle)style
 {
     return [self init];
+}
+
+-(void)       tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    AIZDetailViewController *detailViewController = [[AIZDetailViewController alloc] init];
+
+    NSArray *items = [[AIZItemStore sharedStore] allItems];
+    AIZItem *selectedItem = items[indexPath.row];
+
+    [self.navigationController pushViewController:detailViewController
+                                         animated:YES];
+
+    detailViewController.item = selectedItem;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView
