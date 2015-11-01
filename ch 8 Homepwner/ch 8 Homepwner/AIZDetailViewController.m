@@ -39,4 +39,22 @@
     self.dateLabel.text = [dateFormatter stringFromDate:item.dateCreated];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+
+    [self.view endEditing:YES];
+
+    AIZItem *item = self.item;
+    item.itemName = self.nameField.text;
+    item.serialNumber = self.serialNumber.text;
+    item.valInDollars = [self.valueField.text intValue];
+}
+
+- (void)setItem:(AIZItem *)item
+{
+    _item = item;
+    self.navigationItem.title = _item.itemName;
+}
+
 @end
