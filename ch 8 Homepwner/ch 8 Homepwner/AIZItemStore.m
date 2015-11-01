@@ -8,6 +8,7 @@
 
 #import "AIZItemStore.h"
 #import "AIZItem.h"
+#import "AIZImageStore.h"
 
 @interface AIZItemStore ()
 
@@ -60,6 +61,9 @@
 
 - (void)removeItem:(AIZItem *)item
 {
+    NSString *key = item.itemKey;
+    [[AIZImageStore sharedStore] deleteImageForKey:key];
+    
     [self.privateItems removeObjectIdenticalTo:item];
 }
 

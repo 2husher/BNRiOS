@@ -17,6 +17,7 @@
 		17E3E3ED1BD8031F007204B8 /* AIZItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E3E3EC1BD8031F007204B8 /* AIZItemsViewController.m */; };
 		17E3E3F01BD8045A007204B8 /* AIZItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E3E3EF1BD8045A007204B8 /* AIZItem.m */; };
 		17E3E3F31BD80500007204B8 /* AIZItemStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E3E3F21BD80500007204B8 /* AIZItemStore.m */; };
+		17F160191BE68F1800C481A7 /* AIZImageStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 17F160181BE68F1800C481A7 /* AIZImageStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		17E3E3EF1BD8045A007204B8 /* AIZItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIZItem.m; sourceTree = "<group>"; };
 		17E3E3F11BD80500007204B8 /* AIZItemStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIZItemStore.h; sourceTree = "<group>"; };
 		17E3E3F21BD80500007204B8 /* AIZItemStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIZItemStore.m; sourceTree = "<group>"; };
+		17F160171BE68F1800C481A7 /* AIZImageStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIZImageStore.h; sourceTree = "<group>"; };
+		17F160181BE68F1800C481A7 /* AIZImageStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIZImageStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +103,8 @@
 				17E3E3EF1BD8045A007204B8 /* AIZItem.m */,
 				17E3E3F11BD80500007204B8 /* AIZItemStore.h */,
 				17E3E3F21BD80500007204B8 /* AIZItemStore.m */,
+				17F160171BE68F1800C481A7 /* AIZImageStore.h */,
+				17F160181BE68F1800C481A7 /* AIZImageStore.m */,
 				17E0DE0A1BD7B31A0044752A /* Images.xcassets */,
 				17E0DE0C1BD7B31A0044752A /* LaunchScreen.xib */,
 				17C6A4731BDFB91F00493BC6 /* AIZDetailViewController.xib */,
@@ -240,6 +245,7 @@
 				17E0DE001BD7B31A0044752A /* main.m in Sources */,
 				17E3E3ED1BD8031F007204B8 /* AIZItemsViewController.m in Sources */,
 				17E3E3F01BD8045A007204B8 /* AIZItem.m in Sources */,
+				17F160191BE68F1800C481A7 /* AIZImageStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

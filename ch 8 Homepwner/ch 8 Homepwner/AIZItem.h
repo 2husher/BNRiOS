@@ -23,5 +23,6 @@
 @property (nonatomic, copy) NSString *serialNumber;
 @property (nonatomic) NSInteger valInDollars;
 @property (nonatomic, readonly, strong) NSDate *dateCreated;
+@property (nonatomic, copy) NSString *itemKey;
 
 @end

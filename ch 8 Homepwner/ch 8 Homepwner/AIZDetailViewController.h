@@ -14,4 +14,6 @@
 
 @property (nonatomic, strong) AIZItem *item;
 
+- (IBAction)takePicture:(id)sender;
+
 @end

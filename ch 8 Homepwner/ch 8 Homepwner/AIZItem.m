@@ -45,6 +45,9 @@
         _serialNumber = serialNumber;
         _valInDollars = valInDollars;
         _dateCreated  = [[NSDate alloc] init];
+        NSUUID *uuid  = [[NSUUID alloc] init];
+        NSString *key = [uuid UUIDString];
+        _itemKey      = key;
     }
     return self;
 }
