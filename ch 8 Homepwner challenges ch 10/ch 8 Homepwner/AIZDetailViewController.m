@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
+- (IBAction)buttonTapped:(id)sender;
 @end
 
 @implementation AIZDetailViewController
@@ -55,6 +56,11 @@
 {
     _item = item;
     self.navigationItem.title = _item.itemName;
+}
+
+- (IBAction)buttonTapped:(id)sender
+{
+    [self.view endEditing:YES];
 }
 
 @end
