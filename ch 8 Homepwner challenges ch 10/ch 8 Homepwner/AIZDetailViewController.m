@@ -8,6 +8,7 @@
 
 #import "AIZDetailViewController.h"
 #import "AIZItem.h"
+#import "AIZDateViewController.h"
 
 @interface AIZDetailViewController ()
 
@@ -17,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 - (IBAction)buttonTapped:(id)sender;
+- (IBAction)changeDate:(id)sender;
 @end
 
 @implementation AIZDetailViewController
@@ -61,6 +63,16 @@
 - (IBAction)buttonTapped:(id)sender
 {
     [self.view endEditing:YES];
+}
+
+- (IBAction)changeDate:(id)sender
+{
+    AIZDateViewController *dateViewController = [[AIZDateViewController alloc] init];
+
+    [self.navigationController pushViewController:dateViewController
+                                         animated:YES];
+
+    dateViewController.item = self.item;
 }
 
 @end

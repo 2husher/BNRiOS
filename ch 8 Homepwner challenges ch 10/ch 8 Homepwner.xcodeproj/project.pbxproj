@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		17C6A4741BDFB91F00493BC6 /* AIZDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17C6A4721BDFB91F00493BC6 /* AIZDetailViewController.m */; };
 		17C6A4751BDFB91F00493BC6 /* AIZDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17C6A4731BDFB91F00493BC6 /* AIZDetailViewController.xib */; };
+		17D0CA1F1BEE1EDD005F6226 /* AIZDateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17D0CA1E1BEE1EDD005F6226 /* AIZDateViewController.m */; };
+		17D0CA261BEE2032005F6226 /* AIZDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17D0CA251BEE2032005F6226 /* AIZDateViewController.xib */; };
 		17E0DE001BD7B31A0044752A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E0DDFF1BD7B31A0044752A /* main.m */; };
 		17E0DE031BD7B31A0044752A /* AIZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17E0DE021BD7B31A0044752A /* AIZAppDelegate.m */; };
 		17E0DE0B1BD7B31A0044752A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 17E0DE0A1BD7B31A0044752A /* Images.xcassets */; };
@@ -33,6 +35,9 @@
 		17C6A4711BDFB91F00493BC6 /* AIZDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIZDetailViewController.h; sourceTree = "<group>"; };
 		17C6A4721BDFB91F00493BC6 /* AIZDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIZDetailViewController.m; sourceTree = "<group>"; };
 		17C6A4731BDFB91F00493BC6 /* AIZDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AIZDetailViewController.xib; sourceTree = "<group>"; };
+		17D0CA1D1BEE1EDD005F6226 /* AIZDateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AIZDateViewController.h; sourceTree = "<group>"; };
+		17D0CA1E1BEE1EDD005F6226 /* AIZDateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AIZDateViewController.m; sourceTree = "<group>"; };
+		17D0CA251BEE2032005F6226 /* AIZDateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AIZDateViewController.xib; sourceTree = "<group>"; };
 		17E0DDFA1BD7B31A0044752A /* ch 8 Homepwner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ch 8 Homepwner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		17E0DDFE1BD7B31A0044752A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		17E0DDFF1BD7B31A0044752A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,6 +101,8 @@
 				17E3E3EC1BD8031F007204B8 /* AIZItemsViewController.m */,
 				17C6A4711BDFB91F00493BC6 /* AIZDetailViewController.h */,
 				17C6A4721BDFB91F00493BC6 /* AIZDetailViewController.m */,
+				17D0CA1D1BEE1EDD005F6226 /* AIZDateViewController.h */,
+				17D0CA1E1BEE1EDD005F6226 /* AIZDateViewController.m */,
 				17E3E3EE1BD8045A007204B8 /* AIZItem.h */,
 				17E3E3EF1BD8045A007204B8 /* AIZItem.m */,
 				17E3E3F11BD80500007204B8 /* AIZItemStore.h */,
@@ -103,6 +110,7 @@
 				17E0DE0A1BD7B31A0044752A /* Images.xcassets */,
 				17E0DE0C1BD7B31A0044752A /* LaunchScreen.xib */,
 				17C6A4731BDFB91F00493BC6 /* AIZDetailViewController.xib */,
+				17D0CA251BEE2032005F6226 /* AIZDateViewController.xib */,
 				17E0DDFD1BD7B31A0044752A /* Supporting Files */,
 			);
 			path = "ch 8 Homepwner";
@@ -214,6 +222,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17D0CA261BEE2032005F6226 /* AIZDateViewController.xib in Resources */,
 				17E0DE0E1BD7B31A0044752A /* LaunchScreen.xib in Resources */,
 				17C6A4751BDFB91F00493BC6 /* AIZDetailViewController.xib in Resources */,
 				17E0DE0B1BD7B31A0044752A /* Images.xcassets in Resources */,
@@ -235,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17E0DE031BD7B31A0044752A /* AIZAppDelegate.m in Sources */,
+				17D0CA1F1BEE1EDD005F6226 /* AIZDateViewController.m in Sources */,
 				17E3E3F31BD80500007204B8 /* AIZItemStore.m in Sources */,
 				17C6A4741BDFB91F00493BC6 /* AIZDetailViewController.m in Sources */,
 				17E0DE001BD7B31A0044752A /* main.m in Sources */,
