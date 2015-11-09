@@ -11,7 +11,7 @@
 
 @interface AIZDrawView ()
 
-@property (nonatomic, strong) AIZLine *currentLine;
+@property (nonatomic, strong) NSMutableDictionary *linesInProgress;
 @property (nonatomic, strong) NSMutableArray *finishedLines;
 
 @end
@@ -23,8 +23,10 @@
     self = [super initWithFrame:frame];
     if (self)
     {
+        self.linesInProgress = [[NSMutableDictionary alloc] init];
         self.finishedLines = [[NSMutableArray alloc] init];
         self.backgroundColor = [UIColor grayColor];
+        self.multipleTouchEnabled = YES;
     }
     return self;
 }
@@ -48,23 +50,29 @@
         [self strokeLine:line];
     }
 
-    if (self.currentLine)
+    [[UIColor redColor] set];
+    for (NSValue *key in self.linesInProgress)
     {
-        [[UIColor redColor] set];
-        [self strokeLine:self.currentLine];
+        [self strokeLine:self.linesInProgress[key]];
     }
 }
 
 - (void)touchesBegan:(NSSet *)touches
            withEvent:(UIEvent *)event
 {
-    UITouch *t = [touches anyObject];
+    NSLog(@"%@", NSStringFromSelector(_cmd));
 
-    CGPoint location = [t locationInView:self];
+    for (UITouch *t in touches)
+    {
+        CGPoint location = [t locationInView:self];
 
-    self.currentLine = [[AIZLine alloc] init];
-    self.currentLine.begin = location;
-    self.currentLine.end = location;
+        AIZLine *line = [[AIZLine alloc] init];
+        line.begin = location;
+        line.end = location;
+
+        NSValue *key = [NSValue valueWithNonretainedObject:t];
+        self.linesInProgress[key] = line;
+    }
 
     [self setNeedsDisplay];
 }
@@ -72,11 +80,17 @@
 - (void)touchesMoved:(NSSet *)touches
            withEvent:(UIEvent *)event
 {
-    UITouch *t = [touches anyObject];
+    NSLog(@"%@", NSStringFromSelector(_cmd));
 
-    CGPoint location = [t locationInView:self];
+    for (UITouch *t in touches)
+    {
+        CGPoint location = [t locationInView:self];
 
-    self.currentLine.end = location;
+        NSValue *key = [NSValue valueWithNonretainedObject:t];
+        AIZLine *line = self.linesInProgress[key];
+
+        line.end = location;
+    }
 
     [self setNeedsDisplay];
 }
@@ -84,9 +98,30 @@
 - (void)touchesEnded:(NSSet *)touches
            withEvent:(UIEvent *)event
 {
-    [self.finishedLines addObject:self.currentLine];
+    NSLog(@"%@", NSStringFromSelector(_cmd));
 
-    self.currentLine = nil;
+    for (UITouch *t in touches)
+    {
+        NSValue *key = [NSValue valueWithNonretainedObject:t];
+        AIZLine *line = self.linesInProgress[key];
+
+        [self.finishedLines addObject:line];
+        [self.linesInProgress removeObjectForKey:key];
+    }
+
+    [self setNeedsDisplay];
+}
+
+- (void)touchesCancelled:(NSSet *)touches
+               withEvent:(UIEvent *)event
+{
+    NSLog(@"%@", NSStringFromSelector(_cmd));
+
+    for (UITouch *t in touches)
+    {
+        NSValue *key = [NSValue valueWithNonretainedObject:t];
+        [self.linesInProgress removeObjectForKey:key];
+    }
 
     [self setNeedsDisplay];
 }
