@@ -63,6 +63,23 @@
     CGPoint p = [gr locationInView:self];
     self.selectedLine = [self lineAtPoint:p];
 
+    if (self.selectedLine)
+    {
+        [self becomeFirstResponder];
+
+        UIMenuController *menu = [UIMenuController sharedMenuController];
+        UIMenuItem *deleteItem = [[UIMenuItem alloc] initWithTitle:@"Delete"
+                                                            action:@selector(deleteLine:)];
+        menu.menuItems = @[deleteItem];
+        [menu setTargetRect:CGRectMake(p.x, p.y, 2, 2)
+                     inView:self];
+        [menu setMenuVisible:YES animated:YES];
+    }
+    else
+    {
+        [[UIMenuController sharedMenuController] setMenuVisible:NO animated:NO];
+    }
+
     [self setNeedsDisplay];
 }
 
@@ -186,6 +203,17 @@
         }
     }
     return nil;
+}
+
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;
+}
+
+- (void)deleteLine:(id)sender
+{
+    [self.finishedLines removeObject:self.selectedLine];
+    [self setNeedsDisplay];
 }
 
 @end
