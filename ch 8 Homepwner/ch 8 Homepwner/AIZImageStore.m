@@ -21,7 +21,7 @@
     static AIZImageStore *sharedStore = nil;
     if (!sharedStore)
     {
-        sharedStore = [[self alloc] init];
+        sharedStore = [[self alloc] initPrivate];
     }
     return sharedStore;
 }
