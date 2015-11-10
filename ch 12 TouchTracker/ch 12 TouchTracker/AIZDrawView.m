@@ -14,6 +14,8 @@
 @property (nonatomic, strong) NSMutableDictionary *linesInProgress;
 @property (nonatomic, strong) NSMutableArray *finishedLines;
 
+@property (nonatomic, weak) AIZLine *selectedLine;
+
 @end
 
 @implementation AIZDrawView
@@ -33,8 +35,14 @@
                                                     action:@selector(doubleTap:)];
         doubleTapRecognizer.numberOfTapsRequired = 2;
         doubleTapRecognizer.delaysTouchesBegan = YES;
-
         [self addGestureRecognizer:doubleTapRecognizer];
+
+        UITapGestureRecognizer *tapRecognizer =
+            [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                    action:@selector(tap:)];
+        tapRecognizer.delaysTouchesBegan = YES;
+        [tapRecognizer requireGestureRecognizerToFail:doubleTapRecognizer];
+        [self addGestureRecognizer:tapRecognizer];
     }
     return self;
 }
@@ -45,6 +53,16 @@
 
     [self.linesInProgress removeAllObjects];
     [self.finishedLines removeAllObjects];
+    [self setNeedsDisplay];
+}
+
+- (void)tap:(UIGestureRecognizer *)gr
+{
+    NSLog(@"Recognized tap");
+
+    CGPoint p = [gr locationInView:self];
+    self.selectedLine = [self lineAtPoint:p];
+
     [self setNeedsDisplay];
 }
 
@@ -71,6 +89,12 @@
     for (NSValue *key in self.linesInProgress)
     {
         [self strokeLine:self.linesInProgress[key]];
+    }
+
+    if (self.selectedLine)
+    {
+        [[UIColor greenColor] set];
+        [self strokeLine:self.selectedLine];
     }
 }
 
@@ -141,6 +165,27 @@
     }
 
     [self setNeedsDisplay];
+}
+
+- (AIZLine *)lineAtPoint:(CGPoint)p
+{
+    for (AIZLine *line in self.finishedLines)
+    {
+        CGPoint start = line.begin;
+        CGPoint end   = line.end;
+
+        for (float t = 0.0; t <= 1.0; t += 0.05)
+        {
+            float x = start.x + t * (end.x - start.x);
+            float y = start.y + t * (end.y - start.y);
+
+            if (hypot(x - p.x, y - p.y) < 20.0)
+            {
+                return  line;
+            }
+        }
+    }
+    return nil;
 }
 
 @end
