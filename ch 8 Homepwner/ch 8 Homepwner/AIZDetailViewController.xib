@@ -7,7 +7,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AIZDetailViewController">
             <connections>
                 <outlet property="dateLabel" destination="ejN-Gy-MXf" id="DJW-ci-MsG"/>
-                <outlet property="imageView" destination="yWR-Q5-UUg" id="DPZ-NK-r9s"/>
                 <outlet property="nameField" destination="rVT-Bg-evE" id="gj4-h7-2jv"/>
                 <outlet property="serialNumber" destination="Wid-bd-Obb" id="SlE-Fq-KsA"/>
                 <outlet property="toolbar" destination="7cq-Wx-sJ3" id="9t9-nx-6cV"/>
@@ -74,9 +73,6 @@
                         <outlet property="delegate" destination="-1" id="ed9-kS-Try"/>
                     </connections>
                 </textField>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yWR-Q5-UUg">
-                    <rect key="frame" x="8" y="229" width="275" height="246"/>
-                </imageView>
                 <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7cq-Wx-sJ3">
                     <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                     <constraints>
